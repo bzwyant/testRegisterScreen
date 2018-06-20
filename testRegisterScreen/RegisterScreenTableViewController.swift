@@ -75,6 +75,8 @@ class RegisterScreenTableViewController: UITableViewController, UIPickerViewData
         
         favoriteColor = colors[0]
         favoriteColorTextField.text? = favoriteColor!
+        
+        createAccountButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,9 +102,7 @@ class RegisterScreenTableViewController: UITableViewController, UIPickerViewData
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print(indexPath.section)
         if indexPath.section < 5 {
-            print(userNameStackView.bounds.height)
             return 25+usernameTextField.bounds.height+usernameErrorLabel.bounds
             .height
         } else if indexPath.section == 5 {
